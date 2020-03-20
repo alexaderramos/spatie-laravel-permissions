@@ -6,41 +6,33 @@
             <div class="col-md-8">
                 <div class="card">
                     <div class="card-header">
-                        Notes
+                        Permissions
                         <div class="float-right">
-                            <a href="{{route('notes.create')}}">Nuevo</a>
+                            <a href="{{route('permissions.create')}}">Nuevo</a>
                         </div>
                     </div>
 
                     <div class="card-body">
-                        @if(count($notes))
+                        @if(count($permissions))
                             <table class="table">
                                 <thead>
                                 <tr>
                                     <th>#</th>
-                                    <th>AUTHOR</th>
-                                    <th>TITLE</th>
-                                    <th>CONTENT</th>
+                                    <th>NAME</th>
                                     <th>OPTIONS</th>
                                 </tr>
                                 </thead>
                                 <tbody>
 
 
-                                    @foreach($notes as $note)
+                                    @foreach($permissions as $permission)
                                         <tr>
-                                            <td>{{$note->id}}</td>
-                                            <td>{{$note->user->name}}</td>
-                                            <td>{{$note->title}}</td>
-                                            <td>{{$note->description}}</td>
+                                            <td>{{$permission->id}}</td>
+                                            <td>{{$permission->name}}</td>
                                             <td style="width: 150px;"  >
                                                 <div class="btn-group" role="group" aria-label="First group">
-                                                    @can('ver-notas')
-                                                        <a type="button" class="btn btn-info text-white" href=""><i class="icon-eye"></i></a>
-                                                    @endcan
-                                                    @can('editar-notas')
-                                                        <a type="button" class="btn btn-warning text-white" href="{{route('notes.edit',$note)}}"><i class="icon-pencil-1"></i></a>
-                                                    @endcan
+                                                    <a type="button" class="btn btn-info text-white" href=""><i class="icon-eye"></i></a>
+                                                    <a type="button" class="btn btn-warning text-white" href="{{route('permissions.edit',$permission)}}"><i class="icon-pencil-1"></i></a>
                                                     <a type="button" class="btn btn-danger text-white"><i class="icon-trashcan"></i></a>
                                                 </div>
                                             </td>
@@ -50,7 +42,7 @@
                             </table>
                             <div class="row">
                                 <div class="mx-auto">
-                                    {{$notes->links()}}
+                                    {{--$permissions->links()--}}
                                 </div>
                             </div>
                         @else

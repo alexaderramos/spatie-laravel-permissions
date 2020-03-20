@@ -8,6 +8,11 @@ use Illuminate\Http\Request;
 class NoteController extends Controller
 {
 
+    public function __construct()
+    {
+        $this->middleware('permission:editar-notas')->only('edit');
+    }
+
     public function index()
     {
         $notes = Note::paginate(5);
