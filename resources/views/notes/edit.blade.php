@@ -8,10 +8,12 @@
                     <div class="card-header">Notes EDIT</div>
 
                     <div class="card-body">
-
-                        @component('notes.partials.form')
-                            @slot('note',$note)
-                        @endcomponent
+                        <form action="" method="post" class="form">
+                            @component('notes.partials.form')
+                                @method('PUT')
+                                @slot('note',$note)
+                            @endcomponent
+                        </form>
                     </div>
                 </div>
             </div>

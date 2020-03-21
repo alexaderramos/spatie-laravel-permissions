@@ -10,7 +10,7 @@ class NoteController extends Controller
 
     public function __construct()
     {
-        $this->middleware('permission:editar-notas')->only('edit');
+        $this->middleware('permission:notes.edit')->only('edit');
     }
 
     public function index()

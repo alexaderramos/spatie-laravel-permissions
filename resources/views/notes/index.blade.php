@@ -35,13 +35,15 @@
                                             <td>{{$note->description}}</td>
                                             <td style="width: 150px;"  >
                                                 <div class="btn-group" role="group" aria-label="First group">
-                                                    @can('ver-notas')
+                                                    @can('notes.show')
                                                         <a type="button" class="btn btn-info text-white" href=""><i class="icon-eye"></i></a>
                                                     @endcan
-                                                    @can('editar-notas')
+                                                    @can('notes.edit')
                                                         <a type="button" class="btn btn-warning text-white" href="{{route('notes.edit',$note)}}"><i class="icon-pencil-1"></i></a>
                                                     @endcan
-                                                    <a type="button" class="btn btn-danger text-white"><i class="icon-trashcan"></i></a>
+                                                    @can('notes.destroy')
+                                                        <a type="button" class="btn btn-danger text-white"><i class="icon-trashcan"></i></a>
+                                                    @endcan
                                                 </div>
                                             </td>
                                         </tr>
