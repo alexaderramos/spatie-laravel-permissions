@@ -47,7 +47,7 @@ return [
             'hash' => false,
         ],
 
-        'students' => [
+        'student' => [
             'driver' => 'session',
             'provider' => 'students',
         ],
