@@ -47,16 +47,18 @@ Route::group(['middleware'=>'auth'], function (){
 });
 
 
-Route::group(['middleware'=>'auth:students'],function (){
-    Route::get('students/area', 'StudentController@area');
+Route::group(['prefix'=>'students'],function (){
+    Route::get('home', 'StudentHomeController@index')->name('students.home');
 });
 
 
 //Rutas para autenticacion de studiantes
+Route::group(['prefix'=>'students','namespace'=>'AuthStudents'], function (){
+    Route::get('login','LoginStudentController@showLoginForm')->name('students.login');
+    Route::post('login','LoginStudentController@login');
+    Route::post('logout','LoginStudentController@logout')->name('students.logout');
 
-    Route::get('students/login','AuthStudents\LoginStudentController@showLoginForm')->name('students.login');
-    Route::post('students/login','AuthStudents\LoginStudentController@login');
-    Route::post('students/logout','AuthStudents\LoginStudentController@logout')->name('students.logout');
+});
 
 
 
