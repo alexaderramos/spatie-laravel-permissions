@@ -1,4 +1,4 @@
-<form action="" method="post" class="form">
+
     @csrf
     <div class="form-group">
         <label for="title">Title</label>
@@ -11,5 +11,3 @@
     <div class="float-right">
         <button type="submit" class="btn btn-primary">Save</button>
     </div>
-
-</form>
