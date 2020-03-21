@@ -57,6 +57,8 @@ Route::group(['prefix'=>'students','namespace'=>'AuthStudents'], function (){
     Route::get('login','LoginStudentController@showLoginForm')->name('students.login');
     Route::post('login','LoginStudentController@login');
     Route::post('logout','LoginStudentController@logout')->name('students.logout');
+    Route::get('register','RegisterStudentController@showRegistrationForm')->name('students.register');
+    Route::post('register','RegisterStudentController@register');
 
 });
 
