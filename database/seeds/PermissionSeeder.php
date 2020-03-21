@@ -12,8 +12,9 @@ class PermissionSeeder extends Seeder
      */
     public function run()
     {
-        Permission::create(['name' => 'edit notes']);
-        Permission::create(['name' => 'create notes']);
-        Permission::create(['name' => 'destroy notes']);
+        Permission::create(['name' => 'notes.edit']);
+        Permission::create(['name' => 'notes.create']);
+        Permission::create(['name' => 'notes.destroy']);
+        Permission::create(['name' => 'notes.show']);
     }
 }
